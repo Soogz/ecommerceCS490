@@ -9,8 +9,8 @@ def index(request):
     if request.user.is_authenticated:
         cart, created = Cart.objects.get_or_create(user=request.user, completed=False)
 
-    context = {"products": products, 'cart': cart}
-    return render(request, "index.html", context)
+        context = {"products": products, 'cart': cart}
+        return render(request, "index.html", context)
 
 def cart(request):
 
